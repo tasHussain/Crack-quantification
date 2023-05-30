@@ -51,7 +51,7 @@ def augment_data(Images, Masks, save_path, augment =True):
       index += 1
 if __name__ == "__main__":
   np.random.seed(42)
-  data_path = "/data/thussain/Crack-quantification-main/"
+  data_path = "/data/thussain/"
   (train_x, train_y), (test_x, test_y) = load_data(data_path)
   print(f"Train: {len(train_x)} . {len(train_y)}")
   print(f"Test: {len(test_x)} . {len(test_y)}")
