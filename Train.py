@@ -88,7 +88,7 @@ if __name__ == "__main__":
         """ Saving the model """
         if valid_loss < best_valid_loss:
             data_str = f"Valid loss improved from {best_valid_loss:2.4f} to {valid_loss:2.4f}. Saving checkpoint: {checkpoint_path}"
-            print(data_str
+            print(data_str)
             best_valid_loss = valid_loss
             torch.save(model.state_dict(), checkpoint_path)
         end_time = time.time()
