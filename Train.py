@@ -1,4 +1,7 @@
 from torch.nn.modules.loss import BCEWithLogitsLoss
+import torch
+from torch.autograd import Variable
+import torch.optim as optim
 import os
 import time
 from glob import glob
