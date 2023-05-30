@@ -7,6 +7,9 @@ from torch.utils.data import DataLoader
 import torch.nn as nn
 from Utils import seeding, epoch_time, create_dir
 from Dataset import DriveDataset
+from Loss import DiceLoss, DiceBCELoss
+from model import build_unet
+
 def train(model, loader, optimizer, loss_fn, device):
     epoch_loss = 0.0
     model.train()
