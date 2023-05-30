@@ -51,13 +51,13 @@ def augment_data(Images, Masks, save_path, augment =True):
       index += 1
 if __name__ == "__main__":
   np.random.seed(42)
-  data_path = "/home/thussain/"
+  data_path = "/data/thussain/Crack-quantification-main/"
   (train_x, train_y), (test_x, test_y) = load_data(data_path)
   print(f"Train: {len(train_x)} . {len(train_y)}")
   print(f"Test: {len(test_x)} . {len(test_y)}")
-  create_dir("/home/thussain/new_data/Train/Images/")
-  create_dir("/home/thussain/new_data/Train/Masks/")
-  create_dir("/home/thussain/new_data/Test/Images/")
-  create_dir("/home/thussain/new_data/Test/Masks/")
-  augment_data(train_x, train_y, "home/thussain/new_data/Train/", augment = True)
-  augment_data(test_x, test_y, "home/thussain/new_data/Test/", augment = False)
+  create_dir("/data/thussain/new_data/Train/Images/")
+  create_dir("/data/thussain/new_data/Train/Masks/")
+  create_dir("/data/thussain/new_data/Test/Images/")
+  create_dir("/data/thussain/new_data/Test/Masks/")
+  augment_data(train_x, train_y, "data/thussain/new_data/Train/", augment = False)
+  augment_data(test_x, test_y, "data/thussain/new_data/Test/", augment = False)
