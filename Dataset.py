@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 import torch
 from torch.utils.data import Dataset
-class DriveDataset(Dataset):
+class CrackDataset(Dataset):
     def __init__(self, images_path, masks_path):
         self.images_path = images_path
         self.masks_path = masks_path
