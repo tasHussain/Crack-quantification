@@ -8,8 +8,7 @@ import torch.nn as nn
 from Utils import seeding, epoch_time, create_dir
 from Dataset import DriveDataset
 from Loss import DiceLoss, DiceBCELoss
-from model import build_unet
-
+from Model import build_unet
 def train(model, loader, optimizer, loss_fn, device):
     epoch_loss = 0.0
     model.train()
@@ -42,10 +41,10 @@ if __name__ == "__main__":
     """ Directories """
     create_dir("/home/thussain/Files")
     """ Load dataset """
-    train_x = sorted(glob("/home/thussain/Train/Images/*"))
-    train_y = sorted(glob("/home/thussain/Train/Masks*"))
-    valid_x = sorted(glob("/home/thussain/Test/Images/*"))
-    valid_y = sorted(glob("/home/thussain/Test/Masks/*"))
+    train_x = sorted(glob("/home/thussain/new_data/Train/Images/*"))
+    train_y = sorted(glob("/home/thussain/new_data/Train/Masks*"))
+    valid_x = sorted(glob("/home/thussain/new_data/Test/Images/*"))
+    valid_y = sorted(glob("/home/thussain/new_data/Test/Masks/*"))
     data_str = f"Dataset Size:\nTrain: {len(train_x)} - Valid: {len(valid_x)}\n"
     print(data_str)
     """ Hyperparameters """
