@@ -57,8 +57,8 @@ if __name__ == "__main__":
     lr = 1e-4
     checkpoint_path = "home/thussain/Files/checkpoint.pth"
     """ Dataset and loader """
-    train_dataset = DriveDataset(train_x, train_y)
-    valid_dataset = DriveDataset(valid_x, valid_y)
+    train_dataset = CrackDataset(train_x, train_y)
+    valid_dataset = CrackDataset(valid_x, valid_y)
     train_loader = DataLoader(
         dataset=train_dataset,
         batch_size=batch_size,
