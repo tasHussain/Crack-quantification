@@ -12,12 +12,20 @@ from Utils import seeding, epoch_time, create_dir
 from Dataset import DriveDataset
 from Loss import DiceLoss, DiceBCELoss
 from Model import build_unet
+lr = 1e-4
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")   ## GTX 1060 6GB
+model = build_unet()
+model = model.to(device)
+optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=5, verbose=True)
+loss_fn = BCEWithLogitsLoss()
+
 def train(model, loader, optimizer, loss_fn, device):
     epoch_loss = 0.0
     model.train()
     for x, y in loader:
         x = x.to(device, dtype=torch.float32)
-        y = y.to(device, dtype=torch.float32
+        y = y.to(device, dtype=torch.float32)
         optimizer.zero_grad()
         y_pred = model(x)
         loss = loss_fn(y_pred, y)
